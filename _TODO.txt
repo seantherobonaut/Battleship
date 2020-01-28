@@ -1,0 +1,64 @@
+... makeMoveHuman(p1 AND p2 if, p2 is computer, then don't bother with asking to get ready
+
+"Why do we need to protect data, if the only thing interacting with that data protects it anyway?"
+    Just make a public data structure, that another function safetly interfaces with
+
+remove the "are you ready" part from the getShot function
+ 
+Print friendly board first, then enemyboard, then instructions, then player input
+
+    //create singleton
+void Game.cheatBoard(otherPlayer)
+void Game.checkReady(currentPlayer) //make sure no one is looking
+void Game.makeMove(currentPlayer(human/comp), otherPlayer(playerBase...either) //(move, cheat, quit)includes getShotResult, setShotResult, getMove(interface), store moves
+    //quit changes isActive, after player moved, they can enter continue? yes/no
+playerHuman Game.createHumanPlayer()
+playerComputer Game.createComputerPlayer()
+bool Game.isActive()
+
+
+Cheater board
+Communicating moves/results
+Storing moves in a file
+Keey playing?
+
+
+
+clearScreen
+setCursor(1,1)
+
+Greeting
+
+Players, Input
+
+Setup human/computer players (this should include getReady)
+clearScreen
+
+//change getShotResult to getMoveResult setMoveResult
+
+DECLARE currentPlayer, otherPlayer
+DECLARE pointHolder
+keepPlaying = true
+
+while(gameWon == false AND keepPlaying == true)
+{
+    Game::instance.cheat_board = otherPlayer.getPlayerBoard()
+    Game::instance.checkReady(currentPlayer)
+    
+    quick fire game loop(number of plays OR quit)
+    
+            moveData = otherPlayer.acceptMove(Game::instance.getPlayerMove(currentPlayer))
+            currentPlayer.recordResult(moveData)
+            
+            Game::instance.processMove(currentPlayer, moveData)
+                (keep track of enemy ship health) player interface handles how the result is handled
+            
+            gameWon = game.checkScore()
+            
+            keepPlaying?
+
+    Swap players --- this will ask the player if they are ready to continue
+}
+
+
+
